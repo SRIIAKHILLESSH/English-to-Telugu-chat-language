@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<program>
+    <name>English to Telugu Phonetic Transcription Converter</name>
+    <description>
+        This program takes English text as input and converts it to Telugu using the Google Translate API.
+        It then converts the Telugu text to its corresponding English phonetic transcription using a custom dictionary.
+    </description>
+    <author>
+        <name>Anonymous</name>
+        <email>anonymous@example.com</email>
+    </author>
+    <dependencies>
+        <dependency>Flask</dependency>
+        <dependency>googletrans</dependency>
+    </dependencies>
+    <functions>
+        <function>
+            <name>get_output</name>
+            <arguments>
+                <argument>english_text</argument>
+            </arguments>
+            <description>
+                This function takes a string of English text as input and returns its corresponding Telugu text in English phonetic transcription.
+            </description>
+            <algorithm>
+                1. Initialize translator object using the Google Translate API.
+                2. Translate the English text to Telugu using the translator object.
+                3. Create a dictionary of Telugu letters and their corresponding English phonetic transcriptions.
+                4. Split the Telugu text into words.
+                5. Split each word into individual letters.
+                6. Loop through each letter and compare it with the keys in the dictionary.
+                7. If the letter is a match, append the corresponding English phonetic transcription to a list of matches.
+                8. Convert the list of matches to a string.
+                9. Return the string of matching letters and their corresponding English phonetic transcriptions.
+            </algorithm>
+        </function>
+        <function>
+            <name>hello</name>
+            <arguments></arguments>
+            <description>
+                This function is the main entry point for the Flask web application. It renders an HTML form for entering English text, and returns the corresponding Telugu text in English phonetic transcription when the form is submitted.
+            </description>
+            <algorithm>
+                1. If the request method is POST:
+                    a. Retrieve the English text from the form data.
+                    b. Call the get_output function to convert the English text to Telugu in English phonetic transcription.
+                    c. Return the result as a string.
+                2. If the request method is GET:
+                    a. Render an HTML form for entering English text.
+            </algorithm>
+        </function>
+    </functions>
+</program>
