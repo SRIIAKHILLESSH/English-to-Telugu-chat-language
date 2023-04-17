@@ -67,7 +67,7 @@ def hello():
         print(request.form.get('text'))
         return get_output(request.form.get('text'))
     else:
-        return render_template("home.html")
+        return render_template("index.html")
 
 if __name__ == '__main__':
    app.run()
